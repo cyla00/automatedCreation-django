@@ -3,6 +3,7 @@ import sys
 import time
 
 urls = 'urls.py'
+forms = 'forms.py'
 templates = 'templates'
 
 def app():
@@ -12,9 +13,11 @@ def app():
     else:
         comando_app = 'python manage.py startapp ' + app_name
         os.system(comando_app)
-        file = open(urls, 'w+')
-        file.write('./' + app_name)
         os.chdir(app_name)
+        fileURLS = open(urls, 'w+')
+        fileURLS.write('./' + app_name)
+        fileFORMS = open(forms, 'w+')
+        fileFORMS.write('./' + app_name)
         os.mkdir(templates)
         os.chdir(templates)
         inner_templates = app_name
