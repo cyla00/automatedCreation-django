@@ -4,6 +4,7 @@ import time
 
 urls = 'urls.py'
 forms = 'forms.py'
+filters = 'filters.py'
 templates = 'templates'
 
 def app():
@@ -18,6 +19,8 @@ def app():
         fileURLS.write('./' + app_name)
         fileFORMS = open(forms, 'w+')
         fileFORMS.write('./' + app_name)
+        fileFILTER = open(filters, 'w+')
+        fileFILTER.write('./' + app_name)
         os.mkdir(templates)
         os.chdir(templates)
         inner_templates = app_name
