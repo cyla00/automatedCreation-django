@@ -2,10 +2,8 @@ import os
 import sys
 import time
 
-urls = 'urls.py'
-forms = 'forms.py'
-filters = 'filters.py'
-decorators = 'decorators.py'
+files = ['urls', 'forms', 'filters', 'decorators']
+py = '.py'
 templates = 'templates'
 
 def app():
@@ -16,22 +14,13 @@ def app():
         comando_app = 'python manage.py startapp ' + app_name
         os.system(comando_app)
         os.chdir(app_name)
-        fileURLS = open(urls, 'w+')
-        fileURLS.write('./' + app_name)
-        print(f'{urls} created')
-        time.sleep(0.5)
-        fileFORMS = open(forms, 'w+')
-        fileFORMS.write('./' + app_name)
-        print(f'{forms} created')
-        time.sleep(0.5)
-        fileFILTER = open(filters, 'w+')
-        fileFILTER.write('./' + app_name)
-        print(f'{filters} created')
-        time.sleep(0.5)
-        fileDECO = open(decorators, 'w+')
-        fileDECO.write('./' + app_name)
-        print(f'{decorators} created')
-        time.sleep(0.5)
+
+        for file in files:
+            file_creation = open(f'{file}{py}', 'w+')
+            file_creation.write('./' + app_name)
+            print(f'{file} created')
+            time.sleep(0.5)
+
         os.mkdir(templates)
         print(f'{templates} folder created')
         time.sleep(0.5)
