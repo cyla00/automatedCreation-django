@@ -3,7 +3,7 @@ import sys
 import time
 
 def superuser_creation():
-    yes = 'Y'
+    yes = 'y'
     no = 'N'
     quest = input(f'do you want to create a superuser on default DB settings? {yes}/{no}: ')
     if quest == yes:
