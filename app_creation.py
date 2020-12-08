@@ -1,6 +1,8 @@
 import os
 import sys
 import time
+from superuser_creation import superuser_creation
+
 
 files = ['urls', 'forms', 'filters', 'decorators']
 py = '.py'
@@ -30,6 +32,6 @@ def app():
         print(f'inner templates {inner_templates} folder created')
         time.sleep(0.5)
         print(f'{app_name} + inner files created OK.')
-        print('quitting...')
-        time.sleep(2)
-        quit()
+        path_parent = os.path.dirname(os.getcwd())
+        os.chdir(path_parent)
+        print(os.getcwd())
